@@ -23,7 +23,9 @@
 
         private static int mouseMoveDeadZone;
 
-        private IntPtr context;
+        //vien
+        //private IntPtr context;
+        public IntPtr context;
 
         private Thread callbackThread;
 
@@ -44,6 +46,10 @@
         private TimeSpan mouseWheelAutoOffDelay;
 
         private TimeSpan mouseMoveAutoOffDelay;
+
+        public int mousePositionX;
+
+        public int mousePositionY;
 
         public Interception(KeyboardFilterMode keyboardFilter, MouseFilterMode mouseFilter)
         {
@@ -675,6 +681,8 @@
                     if (this.InputActivity != null)
                     {
                         this.InputActivity(this, new InterceptionEventArgs(device, new List<KeyInfo>() { new KeyInfo(key, false) }));
+                        this.mousePositionX = 0;
+                        this.mousePositionY = 0;
                     }
                 }
             });
@@ -836,22 +844,26 @@
             {
                 keys.Add(new KeyInfo(InterceptionKey.MouseMoveLeft, true));
                 this.ReleaseKeyWithDelay(this.currentDevice, InterceptionKey.MouseMoveLeft, this.mouseMoveAutoOffDelay);
+                this.mousePositionX = stroke.X;
             }
             else if (stroke.X > Interception.MouseMoveDeadZone)
             {
                 keys.Add(new KeyInfo(InterceptionKey.MouseMoveRight, true));
                 this.ReleaseKeyWithDelay(this.currentDevice, InterceptionKey.MouseMoveRight, this.mouseMoveAutoOffDelay);
+                this.mousePositionX = stroke.X;
             }
 
             if (stroke.Y < -Interception.MouseMoveDeadZone)
             {
                 keys.Add(new KeyInfo(InterceptionKey.MouseMoveUp, true));
                 this.ReleaseKeyWithDelay(this.currentDevice, InterceptionKey.MouseMoveUp, this.mouseMoveAutoOffDelay);
+                this.mousePositionY = stroke.Y;
             }
             else if (stroke.Y > Interception.MouseMoveDeadZone)
             {
                 keys.Add(new KeyInfo(InterceptionKey.MouseMoveDown, true));
                 this.ReleaseKeyWithDelay(this.currentDevice, InterceptionKey.MouseMoveDown, this.mouseMoveAutoOffDelay);
+                this.mousePositionY = stroke.Y;
             }
 
             return keys;

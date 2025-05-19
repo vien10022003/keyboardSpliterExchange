@@ -158,19 +158,24 @@
                     "KeyboardSplitter.Lib.Interceptor.dll",
                     "Interceptor.dll");
 
+                LogWriter.Write("Loading 1");
                 ManagedAssemblyLoader.Load(
                     "KeyboardSplitter.Lib.SplitterCore.dll",
                     "SplitterCore.dll");
 
+                LogWriter.Write("Loading 2");
                 ManagedAssemblyLoader.Load(
                     "KeyboardSplitter.Lib.VirtualXbox.dll",
                     "VirtualXbox.dll");
 
+                LogWriter.Write("Loading 3");
                 ManagedAssemblyLoader.Load(
                     "KeyboardSplitter.Lib.XinputWrapper.dll",
                     "XinputWrapper.dll");
-
+                LogWriter.Write("Loading 4");
                 App.assembliesLoaded = true;
+                
+                LogWriter.Write("Loading 5");
             }
         }
 
@@ -218,6 +223,8 @@
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            
+            LogWriter.Write("Application_Startup 4");
             bool allowMultiInstance = false;
             foreach (var arg in e.Args)
             {
@@ -262,6 +269,7 @@
 
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(this.CurrentDomain_AssemblyResolve);
 
+            LogWriter.Write("Application_Startup 5");
             App.ReportDriversState();
             App.CheckDrivers();
         }

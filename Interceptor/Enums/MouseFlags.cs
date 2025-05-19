@@ -3,7 +3,7 @@
     using System;
 
     [Flags]
-    internal enum MouseFlags : ushort
+    public enum MouseFlags : ushort
     {
         MoveRelative = 0x000,
         MoveAbsolute = 0x001,

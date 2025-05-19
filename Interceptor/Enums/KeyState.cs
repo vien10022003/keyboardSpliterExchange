@@ -3,7 +3,7 @@
     using System;
 
     [Flags]
-    internal enum KeyState : ushort
+    public enum KeyState : ushort
     {
         Down = 0x00,
         Up = 0x01,

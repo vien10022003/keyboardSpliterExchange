@@ -3,7 +3,7 @@
     using System;
 
     [Flags]
-    internal enum MouseState : ushort
+    public enum MouseState : ushort
     {
         None = 0x00,
         LeftDown = 0x01,

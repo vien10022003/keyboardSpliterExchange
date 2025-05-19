@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
     using System.Text;
 
-    internal static class NativeMethods
+    public static class NativeMethods
     {
         [DllImport("interception.dll", EntryPoint = "interception_create_context", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr CreateContext();
@@ -34,7 +34,8 @@
         internal static extern int Send(IntPtr context, int device, ref Stroke stroke, uint numStrokes);
 
         [DllImport("interception.dll", EntryPoint = "interception_receive", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Receive(IntPtr context, int device, ref Stroke stroke, uint numStrokes);
+        //vien
+        public static extern int Receive(IntPtr context, int device, ref Stroke stroke, uint numStrokes);
 
         [DllImport("interception.dll", EntryPoint = "interception_get_hardware_id", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
         internal static extern int GetHardwareId(IntPtr context, int device, StringBuilder hardware_id_buffer, int bufferSize);

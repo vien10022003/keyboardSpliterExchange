@@ -50,6 +50,13 @@
             typeof(SlotInvalidationReason),
             typeof(EmulationSlotBase),
             new PropertyMetadata(SlotInvalidationReason.None));
+        // vien
+        public static readonly DependencyProperty IsListenMouseMappingProperty =
+            DependencyProperty.Register(
+            "IsListenMouseMapping",
+            typeof(bool),
+            typeof(EmulationSlotBase),
+            new PropertyMetadata(false));
 
         private SlotInvalidationReason lastInvalidateReason;
 
@@ -137,6 +144,12 @@
                     this.lastInvalidateReason = value;
                 }
             }
+        }
+        // vien
+        public bool IsListenMouseMapping
+        {
+            get { return (bool)this.GetValue(IsListenMouseMappingProperty); }
+            set { this.SetValue(IsListenMouseMappingProperty, value); }
         }
 
         public virtual void Lock()

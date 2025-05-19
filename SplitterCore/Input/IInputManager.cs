@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Interceptor;
 
     /// <summary>
     /// This interface manages the Windows input devices.
@@ -66,5 +67,8 @@
         /// Destroys the IInputManager
         /// </summary>
         void Destroy();
+
+        //vien
+        Interception GetInterceptor();
     }
 }

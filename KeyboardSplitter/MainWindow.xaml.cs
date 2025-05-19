@@ -129,6 +129,7 @@
             {
                 if (this.startEmulationCommand == null)
                 {
+                    LogWriter.Write("StartEmulationCommand vien ");
                     this.startEmulationCommand = new RelayCommand(this.OnStartEmulationRequested);
                 }
 

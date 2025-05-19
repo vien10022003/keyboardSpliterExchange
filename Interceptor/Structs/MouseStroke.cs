@@ -4,7 +4,7 @@
     using Interceptor.Enums;
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct MouseStroke
+    public struct MouseStroke
     {
         public MouseState State;
         public MouseFlags Flags;

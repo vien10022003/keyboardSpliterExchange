@@ -16,7 +16,7 @@
 
     using VirtualXbox.Enums;
     using XinputWrapper.Enums;
-
+    using Interceptor;
     public class Splitter : SplitterBase
     {
         public Splitter(int slotsCount)
@@ -63,6 +63,35 @@
         public Splitter(IInputManager inputManager, IEmulationManager emulationManager)
             : base(inputManager, emulationManager)
         {
+        }
+
+        // vien
+        private void MappingMouseToAxis(InputEventArgs e, IEmulationSlot slot)
+        {
+            LogWriter.Write("start load");
+            if (!slot.Gamepad.IsOwned)
+            {
+                LogWriter.Write("owned");
+                return;
+            }
+            int gamePadSensitivity = 10;
+            //XboxAxisRx 0x0004
+            //XboxAxisRy 0x0008
+
+            int newValueX =  this.InputManager.GetInterceptor().mousePositionX * gamePadSensitivity;
+            if(newValueX != slot.Gamepad.GetAxisState(0x0004))
+            {
+                LogWriter.Write("newValueX: " + newValueX);
+                slot.Gamepad.SetAxisState(0x0004, (short) newValueX);
+            }
+
+            int newValueY = this.InputManager.GetInterceptor().mousePositionY * gamePadSensitivity;
+            if (newValueY != slot.Gamepad.GetAxisState(0x0008))
+            {
+
+                LogWriter.Write("newValueY: " + newValueY);
+                slot.Gamepad.SetAxisState(0x0008, (short)newValueY);
+            }
         }
 
         private void TranslateInput(InputEventArgs e, IEmulationSlot slot, FunctionType functionType)
@@ -416,6 +445,11 @@
                 this.TranslateInput(e, slot, FunctionType.Trigger);
                 this.TranslateInput(e, slot, FunctionType.Axis);
                 this.TranslateInput(e, slot, FunctionType.Dpad);
+                //vien
+                if (slot.IsListenMouseMapping == true)
+                {
+                    this.MappingMouseToAxis(e, slot);
+                }
             }
         }
 

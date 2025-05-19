@@ -4,7 +4,7 @@
     using Interceptor.Enums;
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct KeyStroke
+    public struct KeyStroke
     {
         public InterceptionKey Code;
         public KeyState State;

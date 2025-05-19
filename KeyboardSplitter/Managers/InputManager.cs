@@ -37,7 +37,7 @@
             typeof(InputManager),
             new PropertyMetadata(string.Empty));
 
-        private Interception interceptor;
+        public Interception interceptor;
 
         private int emergencyLeftDownCount;
 
@@ -148,6 +148,11 @@
             this.InputActivity = null;
             this.InputDeviceChanged = null;
             this.IsDestroyed = true;
+        }
+
+        public Interception GetInterceptor()
+        {
+            return this.interceptor; // Trả về interceptor đã được khởi tạo
         }
 
         public void Dispose()

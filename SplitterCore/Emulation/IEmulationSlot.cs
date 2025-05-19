@@ -20,6 +20,9 @@
 
         SlotInvalidationReason InvalidateReason { get; set; }
 
+        // vien
+        bool IsListenMouseMapping { get; set; }
+
         void Lock();
 
         void Unlock();

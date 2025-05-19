@@ -1,13 +1,10 @@
-# Support me on Patreon
-<a href="https://www.patreon.com/djlastnight" style="font-size:50px">
-  <img src="https://c5.patreon.com/external/logo/rebrandLogoIconMark@2x.png"
-       height="40"
-       style="vertical-align:top" />
-  Click here to become a patron and get your reward!
-    <img src="https://c5.patreon.com/external/logo/rebrandLogoIconMark@2x.png"
-       height="40"
-       style="vertical-align:top" />
-</a>                             
+# Introduction
+
+This repository is a modification of <a href="https://github.com/djlastnight/KeyboardSplitterXbox">
+  KeyboardSplitterXbox
+</a>  for listening to mouse movement distance when simulating first-person (FPS) gaming with a controller.
+
+This modification is just for my split screen gaming needs, if you have the same needs as me, you can try to experience it.          
 
 # djlastnight's Gaming Keyboard Splitter
 [![Github All Releases](https://img.shields.io/github/downloads/djlastnight/KeyboardSplitterXbox/total.svg?style=plastic)](https://github.com/djlastnight/KeyboardSplitterXbox)  
@@ -74,13 +71,12 @@ Please do use the built-in xbox 360 controller tester (from app file menu 'Contr
 If you encounter strange controller behavior in-game, please do an anti-ghosting check, described above, before commiting an issue.  
 
 # Download
-https://github.com/djlastnight/KeyboardSplitterXbox/releases
+https://github.com/vien10022003/keyboardSpliterExchange
 
 # User Interface
-The User Interface is very intuitive and does not require
-technical skills.
+You can choose mouse mapping to map the same axis to your mouse, it can listen to your mouse movement and control with the same distance on the joystick axis
 
-![alt tag](https://raw.githubusercontent.com/djlastnight/KeyboardSplitterXbox/master/splitter_UI_help.png)
+![alt tag](https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/499745125_2128366341016143_1524421910415643425_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=12b72b&_nc_eui2=AeEMOLgSlUYIXFe8PPBIFa7t4n7kd_msOZHifuR3-aw5kQjEvDACBH0yt6Y3jwS3W3_JHnEGyoqZzzmHSfES-chY&_nc_ohc=LTFn2LnPQUgQ7kNvwFxzL1p&_nc_oc=Adn8MtAPUECCDzpF2sr3MzGoN956qOqySKK9cBc81DeJPaAXDl0aN3JgeHjF8eWB9u8oz_uW1-BaNT1qsaqKd_OM&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=-IJ8nGMEjrMb2scvb9B31w&oh=00_AfJ9amS0tGKagameImbIaAo7E2PRTYxpeHjIn-Cw-p-mdw&oe=682FFCB2)
 
 All keyboard mappings to xbox functions such as buttons,
 axes, d-pad directions and triggers are fully customizable.

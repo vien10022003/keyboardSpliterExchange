@@ -35,6 +35,13 @@
             typeof(bool),
             typeof(EmulationSlot),
             new PropertyMetadata(false));
+        // vien
+        public static readonly DependencyProperty IsListenMouseMappingProperty =
+            DependencyProperty.Register(
+            "IsListenMouseMapping",
+            typeof(bool),
+            typeof(EmulationSlot),
+            new PropertyMetadata(false));
 
         private System.Windows.Input.ICommand detectKeyboardCommand;
 
@@ -50,6 +57,13 @@
             {
                 this.InvalidateReason = SlotInvalidationReason.Controller_Already_Plugged_In;
             }
+        }
+
+        // vien
+        public bool IsListenMouseMapping
+        {
+            get { return (bool)this.GetValue(IsListenMouseMappingProperty); }
+            set { this.SetValue(IsListenMouseMappingProperty, value); }
         }
 
         public bool IsOnScreenControllerActive

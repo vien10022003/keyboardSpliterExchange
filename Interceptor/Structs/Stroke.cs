@@ -3,7 +3,8 @@
     using System.Runtime.InteropServices;
 
     [StructLayout(LayoutKind.Explicit)]
-    internal struct Stroke
+    //vien
+    public struct Stroke
     {
         [FieldOffset(0)]
         public MouseStroke Mouse;
